@@ -1,19 +1,16 @@
-import { input } from "./index.js";
-import { wordContainer } from "./index.js";
+import { input } from "./startGame.js";
+import { arrNodes } from "./startGame.js";
 
-export function showLetter(word) {
-  const arrNodes = wordContainer.childNodes;
-  let indexLetters = word.reduce((acc, el, index) => {
-    if (el === input.value) {
+export function showLetter(arrLetters) {
+  const indexLetters = arrLetters.reduce((acc, el, index) => {
+    if (el === input.value.toLowerCase()) {
       acc.push(index);
     }
     return acc;
   }, []);
   for (let i = 0; i < indexLetters.length; i++) {
-    let wordContainerChild = arrNodes[indexLetters[i]];
-    wordContainerChild.textContent = input.value;
-    // console.log(wordContainerChild);
+    const wordContainerChild = arrNodes[indexLetters[i]];
+    wordContainerChild.textContent = input.value.toLowerCase();
   }
   input.value = "";
-  // winImage(arrNodes);
 }

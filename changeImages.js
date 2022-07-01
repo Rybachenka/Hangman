@@ -1,17 +1,9 @@
-import { chekValue } from "./chekValue.js";
-import { resultCounter } from "./index.js";
-import { input } from "./index.js";
-import { img } from "./index.js";
-import { addKey } from "./utils.js";
+import { arrImage } from "./index.js";
+import { img, input } from "./startGame.js";
 
-export function changeImages(arrImage) {
-  const counter = resultCounter();
-  img.setAttribute("src", arrImage[counter]);
+
+export function changeImages(counterIndex) {
+  img.setAttribute("src", arrImage[counterIndex]);
   imgWrapper.append(img);
   input.value = "";
-  console.log(counter);
-  if (counter >= 4) {
-    button.removeEventListener("click", chekValue);
-    input.removeEventListener("keydown", addKey);
-  }
 }

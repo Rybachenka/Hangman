@@ -1,32 +1,30 @@
-import { chekValue } from "./chekValue.js";
-import { img } from "./index.js";
-// import { button } from "./index.js";
-// import { input } from "./index.js";
+import { img } from "./startGame.js";
+import { arrImage, arrWords } from "./index.js";
 
 function mathRandom(max) {
   return Math.floor(Math.random() * max);
 }
 
-export function randomWords(list) {
-  let word = list[mathRandom(list.length)].split("");
-  return word;
+export function randomWords() {
+  let arrLetters = arrWords[mathRandom(arrWords.length)].split("");
+  return arrLetters;
 }
 
-export function showImageStart(arrImage) {
+export function showImageStart() {
   img.setAttribute("src", arrImage[0]);
   imgWrapper.append(img);
 }
 
-export const addKey = function addKey(event) {
-  const keyCode = event.keyCode;
-  if (keyCode === 13) {
-    chekValue();
-  }
-};
-
-export function counterImg() {
+export function counter() {
   let counter = 0;
   return function () {
     return ++counter;
   };
+}
+
+export function removePopup() {
+  console.log(document.querySelector(".containerPopup"));
+  if (document.querySelector(".containerPopup")) {
+    document.querySelector(".containerPopup").remove();
+  }
 }

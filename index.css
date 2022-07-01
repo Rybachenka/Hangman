@@ -17,6 +17,12 @@ img {
   width: auto;
   height: 650px;
 }
+@media (max-width: 900px) {
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
 
 #button {
   width: 50px;
@@ -68,4 +74,42 @@ span {
   height: 30px;
   border: 2px solid black;
   font-size: 20px;
+}
+
+#popup {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 70vw;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 45px;
+  background-color: rgb(255, 255, 255);
+  height: 300px;
+  box-shadow: 10px 4px 8px rgb(0 0 0 / 70%);
+}
+
+.containerPopup {
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(100, 96, 96, 0.55);
+}
+
+#popupButton {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: center;
+  margin-top: 15px;
+  height: 60px;
+  border: 2px solid black;
+  font-size: 25px;
+  background-color: rgb(201, 233, 234);
+  cursor: pointer;
 }
